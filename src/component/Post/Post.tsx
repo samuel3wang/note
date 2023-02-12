@@ -12,11 +12,12 @@ export default function Post(){
   
 
   useEffect(() => {
-    let url :string = `https://blog-data-r5ix.onrender.com/blog/${params.title}` 
+    // let url :string = `https://blog-data-r5ix.onrender.com/blog/${params.title}`
+    let url :string = `${process.env.goServer}/blog/${params.title}`
     axios.get(url)
         .then(res => {
-            setPost(res.data.data)
-            setLoading(false)
+          setPost(res.data.data)
+          setLoading(false)
         })
         .catch(error => {
             console.log(error)
@@ -33,8 +34,9 @@ export default function Post(){
           <CardHeader 
                 title= {post.title} subheader= {post.category} className='bg-sky-100'/>
           <CardContent>
-          <Typography>
-              {post.content}
+          <Typography component={'div'}>
+              {/* {post.content} */}
+              {post.content.split("\n").map((text:any, index:any) => <div key={index}>{text}</div>)}
           </Typography> 
       </CardContent>
       </Card>

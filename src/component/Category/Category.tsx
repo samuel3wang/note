@@ -11,7 +11,9 @@ export default function Category() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get('https://blog-data-r5ix.onrender.com/category')
+        let url :string = `${process.env.goServer}/category`
+        // let url :string = `https://blog-data-r5ix.onrender.com/category`
+        axios.get(url)
             .then(res => {
                 setCategory(res.data.data);
                 setLoading(false);
