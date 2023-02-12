@@ -16,8 +16,7 @@ export default function PostBlock(){
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        let url :string = `${process.env.goServer}/blogs`
-        // let url :string = `https://blog-data-r5ix.onrender.com/blogs`
+        let url :string = `${process.env.REACT_APP_goServer}/blogs`
         axios.get(url)
             .then(res => {
                 setBlogs(res.data);

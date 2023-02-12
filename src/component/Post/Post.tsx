@@ -10,10 +10,8 @@ export default function Post(){
   const [post, setPost] = useState<any>([]);
   const [loading, setLoading] = useState(true);
   
-
   useEffect(() => {
-    // let url :string = `https://blog-data-r5ix.onrender.com/blog/${params.title}`
-    let url :string = `${process.env.goServer}/blog/${params.title}`
+    let url :string = `${process.env.REACT_APP_goServer}/blog/${params.title}`
     axios.get(url)
         .then(res => {
           setPost(res.data.data)
@@ -36,7 +34,7 @@ export default function Post(){
           <CardContent>
           <Typography component={'div'}>
               {/* {post.content} */}
-              {post.content.split("\n").map((text:any, index:any) => <div key={index}>{text}</div>)}
+              {post.content.split("\n").map((text:any, index:any) => <div key={index} className='text-2xl'>{text}</div>)}
           </Typography> 
       </CardContent>
       </Card>

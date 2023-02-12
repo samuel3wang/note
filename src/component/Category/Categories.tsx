@@ -11,8 +11,7 @@ export default function Categories(){
     const topic : string = JSON.stringify(params.category)?.slice(1, -1);
 
     useEffect(() => {
-        let url :string = `${process.env.goServer}/category/${params.category}`
-        // let url :string = `https://blog-data-r5ix.onrender.com/category/${params.category}`
+        let url :string = `${process.env.REACT_APP_goServer}/category/${params.category}`
         axios.get(url)
             .then(res => {
                 setTitle(res.data.data)
