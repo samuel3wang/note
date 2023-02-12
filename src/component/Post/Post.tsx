@@ -11,7 +11,7 @@ export default function Post(){
   const [loading, setLoading] = useState(true);
   
   useEffect(() => {
-    let url :string = `${process.env.REACT_APP_goServer}/blog/${params.title}`
+    let url :string = `https://blog-data-r5ix.onrender.com/blog/${params.title}`
     axios.get(url)
         .then(res => {
           setPost(res.data.data)

@@ -5,13 +5,12 @@ import axios from 'axios';
 // interface Category {
 //     category: string;
 // }
-const URL:any = process.env.REACT_APP_goServer
 
 export default function Category() {
     const [category, setCategory] = useState<any>();
     const [loading, setLoading] = useState(true);
     useEffect(() => {
-        let url :string = `${URL}/category`
+        let url :string = `https://blog-data-r5ix.onrender.com/category`
         axios.get(url)
             .then(res => {
                 setCategory(res.data.data);
