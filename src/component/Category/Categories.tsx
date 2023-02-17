@@ -6,7 +6,7 @@ import { Link, useParams } from 'react-router-dom'
 export default function Categories(){
     const [title, setTitle] = useState<any>([]);
     const [loading, setLoading] = useState(true);
-    
+
     const params = useParams();
     const topic : string = JSON.stringify(params.category)?.slice(1, -1);
 
@@ -21,14 +21,14 @@ export default function Categories(){
                 console.log(error)
             })
     }, [params.category]);
-    
+
     if (loading) {
-        return <p>loading</p>
+        return <p className='mx-8 md:ml-24'>loading</p>
     }
 
     return (
         <>
-            <Card className='mb-12 mx-28'>
+            <Card className='mx-8 md:ml-24 md:mr-8 mb-8'>
                 <CardHeader title= {`${topic}`} className='bg-sky-100'/>
                 <CardContent>
                     {title.map((item: any) => (

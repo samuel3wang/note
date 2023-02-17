@@ -28,15 +28,15 @@ export default function PostBlock(){
     }, []);
 
     if (loading) {
-        return <p>loading</p>
+        return <p className='mx-8 md:ml-24'>loading</p>
     }
 
     return (
         <>
         {blogs.data.map((data: Blog)=> (
-            <Card className='mb-12 mx-28' key={data.title_id}>
+            <Card className='mx-8 md:ml-24 md:mr-8 mb-8' key={data.title_id}>
                 <CardHeader 
-                    title= {data.title} subheader= {data.category} className='bg-sky-100'/>
+                    title= {data.title } subheader= {data.category} className="bg-sky-100 text-18"/>
                 <CardContent>
                 <Typography>
                     {data.content}

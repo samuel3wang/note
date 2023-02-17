@@ -19,17 +19,14 @@ export default function Grid() {
   }
 
   return (
-    <div className="bg-neutral-100">
-      <div className="flex">
-        <div className="w-1/12"/>
-        <div className="w-8/12 mt-12">
+      <div className="flex flex-col md:flex-row bg-neutral-100">
+        <div className="w-full mt-6 md:w-9/12">
           {Block}
         </div>
-        <div className="w-2/12 mt-12">
+        <hr></hr>
+        <div className="w-full mb-8 mt-6 md:w-3/12">
           <Category/>
         </div>
-        <div className="w-1/12"/>
       </div>
-    </div>
   )
 }

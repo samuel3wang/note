@@ -5,7 +5,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 
 export default function Outer() {
   return (
-    <div className="h-20 flex items-center justify-center bg-blue-500 w-screen">
+    <div className="h-16 md:h-20 flex items-center justify-center bg-blue-500 w-screen">
       <a href='https://www.linkedin.com/in/samuel3wang/'>
         <IconButton>
           <LinkedInIcon fontSize="large" htmlColor='white'/>
